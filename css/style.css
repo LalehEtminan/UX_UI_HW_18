@@ -1,9 +1,8 @@
 body{
-	margin: 0;
 	font-family: 'Roboto', sans-serif;
 	background-color: #ffffff;
 }
-ul,li{
+*{
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -29,7 +28,6 @@ header nav{
 	width: 73%;
 	padding: 1%;
 	text-align: right;
-	
 }
 header nav ul{
 	width: 50%;
@@ -76,6 +74,7 @@ section.about div.content div.information h1{
 }
 section.about div.content div.information p{
 	color: #263238;
+	margin: 20px 0;
 }
 section.about div.content div.information button{
 	background-color: #13A49A;
@@ -100,8 +99,9 @@ section.skills{
 	padding: 50px 0;
 	margin: 80px auto;
 }
-section.flexcontainer{
+div.flexcontainer{
 	display: flex;
+	flex-direction: row;
 }
 section.list div.content{
 	width: 1000px;
@@ -112,9 +112,10 @@ section.list h2{
 	font-size: 26px;
 	color: #7B3800;
 	text-align: center;
+	margin-bottom: 20px;
 }
 section.skills div.skill_item{
-	width: 29%;
+	flex: 33%;
 	display: inline-block;
 	padding: 0 20px;
 	text-align: center;
@@ -127,6 +128,15 @@ section.skills div.skill_item img{
 section.list div.skill_item p{
 	font-size: 14px;
 	color: #455A64;
+}
+
+
+div.workGrid{
+	display: grid;
+	grid-template-areas: "my_grid_item1";
+}
+section.portfolio div.work_item_1{
+	grid-area: my_grid_item1;
 }
 section.portfolio div.work_item{
 	margin-bottom: 10px;
@@ -172,4 +182,69 @@ footer ul{
 footer ul li:hover{
 	color: #F6D009;
 	cursor: pointer;
+}
+
+
+
+
+
+/*---- Media Query ----*/
+@media screen and (max-width: 600px) {
+
+	header{
+		padding: 10px;
+	}
+	header div.content{
+		width: 100%;
+	}
+	header div.logo, header nav{
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
+	header div.content logo{
+		text-align: center;
+	}
+	header nav ul{
+		width: 100%;
+	}
+	header nav ul li a {
+		display: block;
+	}
+
+
+	section.about{
+		width: 100%;
+		padding: 10px;
+		margin-top: 0;
+	}
+	section.about div.content{
+		width: 100%;
+	}
+	section.about div.content img{
+		width: 100%;
+	}
+	section.about div.content div.information{
+		width: 100%;
+		margin-left: 0;
+		margin-top: 20px;
+	}
+	section.about div.content div.information p{
+		margin: 20px 0;
+	}
+
+
+	section.list div.content{
+		width: 100%;
+	}
+	div.flexcontainer {
+		flex-direction: column;
+	}
+	section.skills div.skill_item{
+		flex: 100%;
+		padding: 30px 10px;
+	}
+	section.skills div.skill_item h3{
+		margin: 10px 0;
+	}
 }
